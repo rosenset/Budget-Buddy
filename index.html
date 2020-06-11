@@ -13,19 +13,20 @@
 
     <section class='inputFormat'>
 
-        <section id='header'>
+        <section id='blackboxHeader'>
+            <!-- header -->
             <section id='header-container'>
-                <div class='Budget'>
+                <div class='header-container-col'>
                     <h1>Budget</h1>
                     <p id='userBudget'></p>
                 </div>
 
-                <div class='Spent'>
+                <div class='header-container-col'>
                     <h1>Spent</h1>
                     <p id='amountSpent'></p>
                 </div>
 
-                <div class='Balance'>
+                <div class='header-container-col'>
                     <h1>Balance</h1>
                     <p id='balance'></p>
                 </div>
@@ -35,7 +36,7 @@
 
 
 
-        <section id='budget'>
+        <section id='budget-input-section'>
             <input id='what-is-your-budget' placeholder="Input your budget">
             <button id='submit-your-budget'>submit</button>
         </section>
@@ -43,12 +44,12 @@
 
 
 
-        <section id='information'>
+        <section id='information-about-the-purchase'>
             <div class='paragraphAndInput'>
                 <input id='purchase-information-description' placeholder="Expense">
             </div>
             <div class='paragraphAndInput'>
-                <input id='purchase-information-date' placeholder=" Date">
+                <input id='purchase-information-date' placeholder="Date">
             </div>
             <div class='paragraphAndInput'>
                 <input id='purchase-information-price' placeholder="Price">
@@ -70,36 +71,37 @@
 
 
     <section class='tableFormat'>
-        <table id='Entertainment'>
+        <!-- footer -->
+        <table id='ledger-table-entertainment'>
             <tr>
                 <h3>Entertainment</h3>
-                <th class='description'>Description</th>
-                <th class='date'>Date</th>
-                <th class='price'>Price</th>
+                <th class='ledger-col-description'>Description</th>
+                <th class='ledger-col-date'>Date</th>
+                <th class='ledger-col-price'>Price</th>
             </tr>
         </table>
-        <table id='Food'>
+        <table id='ledger-table-food'>
             <tr>
                 <h3>Food</h3>
-                <th class='description'>Description</th>
-                <th class='date'>Date</th>
-                <th class='price'>Price</th>
+                <th class='ledger-col-description'>Description</th>
+                <th class='ledger-col-date'>Date</th>
+                <th class='ledger-col-price'>Price</th>
             </tr>
         </table>
-        <table id='clothing'>
+        <table id='ledger-table-clothing'>
             <tr>
                 <h3>Clothing</h3>
-                <th class='description'>Description</th>
-                <th class='date'>Date</th>
-                <th class='price'>Price</th>
+                <th class='ledger-col-description'>Description</th>
+                <th class='ledger-col-date'>Date</th>
+                <th class='ledger-col-price'>Price</th>
             </tr>
         </table>
-        <table id='bills'>
+        <table id='ledger-table-bills'>
             <tr>
                 <h3>Bills</h3>
-                <th class='description'>Description</th>
-                <th class='date'>Date</th>
-                <th class='price'>Price</th>
+                <th class='ledger-col-description'>Description</th>
+                <th class='ledger-col-date'>Date</th>
+                <th class='ledger-col-price'>Price</th>
             </tr>
         </table>
 
