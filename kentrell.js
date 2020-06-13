@@ -12,14 +12,14 @@ class BudgetBuddy {
             event.preventDefault();
             const data = new FormData(this.budgetSubmitForm);
             this.budgetRemaining = parseFloat(data.get('budget-input')).toFixed(2);
-            if (this.budgetRemaining < 0) {
-                alert("Value cannot be negative.");
-            } 
+            if (this.budgetRemaining < 0 || this.budgetRemaining === "NaN") {
+                alert("Value cannot be negative and must be a number. Try again.");
+            } else {
             this.userBudgetDisplay.innerText = "$" + this.budgetRemaining;
+            }
         })
         }
     }
-
 
 const newBudget = new BudgetBuddy() 
 
