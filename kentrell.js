@@ -1,32 +1,31 @@
 class BudgetBuddy {
     constructor()   {
-    this.budgetSubmitButton = document.getElementById('submit-your-budget');
-    this.userBudgetInput = parseInt(document.getElementById('what-is-your-budget').value);
-    this.userBudgetDisplay = document.getElementById("userBudget");
+    this.budgetSubmitForm = document.getElementById('budget');
+    this.userBudgetDisplay = document.getElementById("user-budget");
     this.amountSpentDisplay = document.getElementById("amountSpent");
     this.balanceDisplay = document.getElementById("balance");
+    this.budgetRemaining;
     }
 
     submitBudgetInput() {
-    const budgetAmout = this.userBudgetInput;
-        if (this.userBudgetInput < 0) {
-            alert("Your budget must be positive. Try again.");
-        } else {
-        this.userBudgetDisplay.innerText = "$" + budgetAmout; 
+        this.budgetSubmitForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const data = new FormData(this.budgetSubmitForm);
+            this.budgetRemaining = parseFloat(data.get('budget-input')).toFixed(2);
+            if (this.budgetRemaining < 0) {
+                alert("Value cannot be negative.");
+            } 
+            this.userBudgetDisplay.innerText = "$" + this.budgetRemaining;
+        })
         }
     }
-}
+
 
 const newBudget = new BudgetBuddy() 
 
-function budgetFunctions() {
-const budgetSubmitButton = document.getElementById('submit-your-budget');
+newBudget.submitBudgetInput(); 
+
+//function budgetFunctions() {
+//const budgetSubmitForm = document.getElementById('submit-your-budget');
 //const userBudgetInput = parseInt(document.getElementById('what-is-your-budget').value);
-//const userBudgetDisplay = document.getElementById("userBudget");
-
-budgetSubmitButton.addEventListener("submit", () => {
-    event.preventDefault();
-    newBudget.submitBudgetInput();
-})
-
-}
+//const userBudgetDisplay = document.getElementById("user-budget");
