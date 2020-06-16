@@ -4,6 +4,8 @@ class BudgetBuddy {
     this.userBudgetDisplay = document.getElementById("user-budget");
     this.amountSpentDisplay = document.getElementById("amountSpent");
     this.balanceDisplay = document.getElementById("balance");
+    this.expenseSubmitButton = document.getElementById("addButton");
+    this.expenseFormData = document.getElementById("purchase-type-dropdown");
     this.budgetRemaining;
     }
 
@@ -19,7 +21,14 @@ class BudgetBuddy {
             }
         })
         }
+    // submitExpense() {
+    //     this.expenseSubmitButton.addEventListener("submit", (event) => {
+    //         event.preventDefault(); 
+    //         const data = new FormData(this.expenseFormData);
+    //         if ()
+    //     })
     }
+
 
 const newBudget = new BudgetBuddy() 
 
