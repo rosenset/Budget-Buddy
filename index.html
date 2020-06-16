@@ -10,16 +10,12 @@
 </head>
 
 <body>
-
-    <header>hello</header>
-
     <section class='inputFormat'>
-
         <section id='firstHeader'>
             <section id='header-container'>
                 <div class='header-container'>
                     <h1>Budget</h1>
-                    <p id='userBudget'></p>
+                    <p id='user-budget'></p>
                 </div>
 
                 <div class='header-container'>
@@ -37,17 +33,17 @@
 
 
 
-        <section id='budget'>
-            <input id='what-is-your-budget' placeholder="Input your budget" name='budgetinput'>
+        <form id='budget'>
+            <input id='what-is-your-budget' placeholder="Input your budget" name='budget-input'>
             <button id='submit-your-budget'>submit</button>
-        </section>
+        </form>
 
 
 
 
-        <section id='purchaseInfo'>
+        <form id='purchaseInfo'>
             <div class='paragraphInput'>
-                <input id='purchase-information-description' placeholder="Please Enter Your Expense">
+                <input id='purchase-information-description' placeholder="Please Enter Your What You Bought">
             </div>
             <div class='paragraphInput'>
                 <input id='purchase-information-date' placeholder="Please Enter the Date">
@@ -67,8 +63,7 @@
             <div class='paragraphInput'>
                 <button id='addButton'>Submit</button>
             </div>
-        </section>
-    </section>
+        </form>
 
 
 
@@ -113,9 +108,7 @@
     </section>
 
 
-
-
-
+<script src="kentrell.js"></script>
 </body>
 
 </html>
