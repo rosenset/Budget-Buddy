@@ -1,12 +1,18 @@
+const billsTable = document.getElementById("billsTable");
+const foodTable = document.getElementById("foodTable");
+const entertainmentTable = document.getElementById("entertainmentTable");
+const purchaseInfoForm = document.getElementById("purchaseInfo");
+
+const expenseDescription = document.getElementById("purchase-information-description");
+const expenseDate = document.getElementById("purchase-information-date");
+const expensePrice = document.getElementById("purchase-information-price");
+const expenseType = document.getElementById("purchase-type-dropdown");
+
 class BudgetBuddy {
-    constructor()   {
-    this.budgetSubmitForm = document.getElementById('budget');
-    this.userBudgetDisplay = document.getElementById("user-budget");
-    this.amountSpentDisplay = document.getElementById("amountSpent");
-    this.balanceDisplay = document.getElementById("balance");
-    this.expenseSubmitButton = document.getElementById("addButton");
-    this.expenseFormData = document.getElementById("purchase-type-dropdown");
-    this.budgetRemaining;
+    constructor() {
+        this.budgetSubmitForm = document.getElementById('budget');
+        this.userBudgetDisplay = document.getElementById("user-budget");
+        this.budgetRemaining;
     }
 
     submitBudgetInput() {
@@ -17,22 +23,25 @@ class BudgetBuddy {
             if (this.budgetRemaining < 0 || this.budgetRemaining === "NaN") {
                 alert("Value cannot be negative and must be a number. Try again.");
             } else {
-            this.userBudgetDisplay.innerText = "$" + this.budgetRemaining;
+                this.userBudgetDisplay.innerText = "$" + this.budgetRemaining;
             }
         })
-        }
-    // submitExpense() {
-    //     this.expenseSubmitButton.addEventListener("submit", (event) => {
-    //         event.preventDefault(); 
-    //         const data = new FormData(this.expenseFormData);
-    //         if ()
-    //     })
     }
+    submitExpense() {
+        purchaseInfoForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const selectedType = expenseType.value;
+            console.log(selectedType);
+        })
+    }
+}
 
 
-const newBudget = new BudgetBuddy() 
+const newBudget = new BudgetBuddy()
 
-newBudget.submitBudgetInput(); 
+newBudget.submitBudgetInput();
+newBudget.submitExpense();
+
 
 //function budgetFunctions() {
 //const budgetSubmitForm = document.getElementById('submit-your-budget');
