@@ -46,7 +46,7 @@ class BudgetBuddy {
                 newRow.append(newData1);
                 newRow.append(newData2);
                 newData.innerText = expenseDescription.value; 
-                newData1.innerText = expensePrice.value;
+                newData1.innerText = expenseDate.value;
                 const itemPrice = Number.parseFloat(expensePrice.value);
                 newData2.innerText = itemPrice;
                 this.spentExpenses += itemPrice;
@@ -66,7 +66,9 @@ class BudgetBuddy {
             alert("error... You didn't select a category");
         }
     })
-}}
+}
+
+}
 
 
 const newBudget = new BudgetBuddy()
