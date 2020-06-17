@@ -1,6 +1,7 @@
 const billsTable = document.getElementById("billsTable");
 const foodTable = document.getElementById("foodTable");
 const entertainmentTable = document.getElementById("entertainmentTable");
+const clothingTable = document.getElementById("clothingTable")
 const purchaseInfoForm = document.getElementById("purchaseInfo");
 
 const expenseDescription = document.getElementById("purchase-information-description");
@@ -31,10 +32,51 @@ class BudgetBuddy {
         purchaseInfoForm.addEventListener("submit", (event) => {
             event.preventDefault();
             const selectedType = expenseType.value;
-            console.log(selectedType);
-        })
-    }
-}
+            // const newRow = document.createElement("tr");
+            //     const newData = document.createElement("td");
+            //     const newData1 = document.createElement("td");
+            //     const newData2 = document.createElement("td");
+            if (selectedType === "Bills") {
+                const newRow = document.createElement("tr");
+                const newData = document.createElement("td");
+                const newData1 = document.createElement("td");
+                const newData2 = document.createElement("td");
+                newRow.append(newData);
+                newRow.append(newData1);
+                newRow.append(newData2);
+                newData.innerText = document.getElementById("purchase-information-description").value; 
+                newData1.innerText = document.getElementById("purchase-information-date").value;
+                newData2.innerText = document.getElementById("purchase-information-price").value;
+                billsTable.append(newRow);
+            } else if (selectedType === "Food") {
+                newRow.append(newData);
+                newRow.append(newData1);
+                newRow.append(newData2);
+                newData.innerText = document.getElementById("purchase-information-description").value;
+                newData1.innerText = document.getElementById("purchase-information-date").value;
+                newData2.innerText = document.getElementById("purchase-information-price").value;
+                foodTable.append(newRow);
+            } else if (selectedType === "Entertainment") {
+                newRow.append(newData);
+                newRow.append(newData1);
+                newRow.append(newData2);
+                newData.innerText = document.getElementById("purchase-information-description").value;
+                newData1.innerText = document.getElementById("purchase-information-date").value;
+                newData2.innerText = document.getElementById("purchase-information-price").value;
+                entertainmentTable.append(newRow);
+            } else if (selectedType === "Clothing") {
+                newRow.append(newData);
+                newRow.append(newData1);
+                newRow.append(newData2);
+                newData.innerText = document.getElementById("purchase-information-description").value;
+                newData1.innerText = document.getElementById("purchase-information-date").value;
+                newData2.innerText = document.getElementById("purchase-information-price").value;
+                clothingTable.append(newRow);
+        } else if (selectedType === "empty") {
+            alert("error... You didn't select a category")
+        }
+    })
+}}
 
 
 const newBudget = new BudgetBuddy()
