@@ -50,17 +50,25 @@ class BudgetBuddy {
                 const itemPrice = Number.parseFloat(expensePrice.value);
                 newData2.innerText = itemPrice;
                 this.spentExpenses += itemPrice;
-                updateSpent.innerText = this.spentExpenses.toFixed(2);
+                // updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 this.balanceRemaining -= itemPrice;
-                updateBalance.innerText = this.balanceRemaining.toFixed(2);
+                // updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
             if (selectedType === "Bills") {
                 billsTable.append(newRow);
+                updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
+                updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
             } else if (selectedType === "Food") {
                 foodTable.append(newRow);
+                updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
+                updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
             } else if (selectedType === "Entertainment") {
                 entertainmentTable.append(newRow);
+                updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
+                updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
             } else if (selectedType === "Clothing") {
                 clothingTable.append(newRow);
+                updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
+                updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
         } else if (selectedType === "empty") {
             newRow.remove();
             alert("error... You didn't select a category");
