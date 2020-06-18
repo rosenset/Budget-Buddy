@@ -37,6 +37,7 @@ class BudgetBuddy {
     submitExpense() {
         purchaseInfoForm.addEventListener("submit", (event) => {
             event.preventDefault();
+            
             const selectedType = expenseType.value;
             const newRow = document.createElement("tr");
                 const newData = document.createElement("td");
