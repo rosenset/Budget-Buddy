@@ -73,9 +73,9 @@ class BudgetBuddy {
         } else if (selectedType === "empty") {
             newRow.remove();
             alert("error... You didn't select a category");
-        } if (this.balanceRemaining === 0) {
+        } if (this.balanceRemaining <= 15) {
                 alert("You are reaching your budget limit for the week");
-            } else if (this.balanceRemaining < 0) {
+            } else if (this.balanceRemaining <= 0) {
                 alert("Sorry... you have no more money!");
             }
     })
