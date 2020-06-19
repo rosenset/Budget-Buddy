@@ -10,6 +10,10 @@ const expenseDescription = document.getElementById("purchase-information-descrip
 const expenseDate = document.getElementById("purchase-information-date");
 const expensePrice = document.getElementById("purchase-information-price");
 const expenseType = document.getElementById("purchase-type-dropdown");
+const bills = document.getElementById('bills-total');
+const food = document.getElementById('food-total');
+const entertainment = document.getElementById('entertainment-total');
+const clothing = document.getElementById('clothing-table');
 
 class BudgetBuddy {
     constructor() {
@@ -18,10 +22,10 @@ class BudgetBuddy {
         this.budget;
         this.balanceRemaining;
         this.spentExpenses = 0;
-        this.bills = document.getElementById('bills-total');
-        this.food = document.getElementById('food-total');
-        this.entertainment = document.getElementById('entertainment-total');
-        this.clothing = document.getElementById('clothing-table');
+        this.billsExpenses = 0;
+        this.foodExpenses = 0;
+        this.entertainmentExpenses = 0;
+        this.clothingExpenses = 0;
     }
 
     submitBudgetInput() {
@@ -60,22 +64,26 @@ class BudgetBuddy {
                 billsTable.append(newRow);
                 updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
-                this.bills.innerText = "Total Bills: " + this.spentExpenses.toFixed(2);
+                this.billsExpenses += itemPrice;
+                bills.innerText = "Total Bills: "+"$"+ parseFloat(this.billsExpenses).toFixed(2); 
             } else if (selectedType === "Food") {
                 foodTable.append(newRow);
                 updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
-                this.food.innerText = "Total Food: " + this.spentExpenses.toFixed(2);
+                this.foodExpenses += itemPrice;
+                food.innerText = "Total Food: "+"$"+ parseFloat(this.foodExpenses).toFixed(2);
             } else if (selectedType === "Entertainment") {
                 entertainmentTable.append(newRow);
                 updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
-                this.entertainment.innerText = "Total Entertainment: " + this.spentExpenses.toFixed(2);
+                this.entertainmentExpenses += itemPrice;
+                entertainment.innerText = "Total Entertainment: "+"$"+ parseFloat(this.entertainmentExpenses).toFixed(2);
             } else if (selectedType === "Clothing") {
                 clothingTable.append(newRow);
                 updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
-                this.clothing.innerText = "Total Clothing:" + this.spentExpenses.toFixed(2);
+                this.clothingExpenses += itemPrice;
+                clothing.innerText = "Total Clothing: "+"$"+ parseFloat(this.clothingExpenses).toFixed(2);
         } else if (selectedType === "empty") {
             newRow.remove();
             alert("error... You didn't select a category");
