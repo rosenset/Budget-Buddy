@@ -13,7 +13,7 @@ const expenseType = document.getElementById("purchase-type-dropdown");
 const bills = document.getElementById('bills-total');
 const food = document.getElementById('food-total');
 const entertainment = document.getElementById('entertainment-total');
-const clothing = document.getElementById('clothing-table');
+const clothing = document.getElementById('clothing-total');
 
 class BudgetBuddy {
     constructor() {
@@ -102,9 +102,3 @@ const newBudget = new BudgetBuddy()
 
 newBudget.submitBudgetInput();
 newBudget.submitExpense();
-
-
-//function budgetFunctions() {
-//const budgetSubmitForm = document.getElementById('submit-your-budget');
-//const userBudgetInput = parseInt(document.getElementById('what-is-your-budget').value);
-//const userBudgetDisplay = document.getElementById("user-budget");
