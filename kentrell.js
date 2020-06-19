@@ -10,6 +10,10 @@ const expenseDescription = document.getElementById("purchase-information-descrip
 const expenseDate = document.getElementById("purchase-information-date");
 const expensePrice = document.getElementById("purchase-information-price");
 const expenseType = document.getElementById("purchase-type-dropdown");
+const bills = document.getElementById('bills-total');
+const food = document.getElementById('food-total');
+const entertainment = document.getElementById('entertainment-total');
+const clothing = document.getElementById('clothing-table');
 
 class BudgetBuddy {
     constructor() {
@@ -18,6 +22,10 @@ class BudgetBuddy {
         this.budget;
         this.balanceRemaining;
         this.spentExpenses = 0;
+        this.billsExpenses = 0;
+        this.foodExpenses = 0;
+        this.entertainmentExpenses = 0;
+        this.clothingExpenses = 0;
     }
 
     submitBudgetInput() {
@@ -51,32 +59,38 @@ class BudgetBuddy {
                 const itemPrice = Number.parseFloat(expensePrice.value);
                 newData2.innerText = itemPrice;
                 this.spentExpenses += itemPrice;
-                // updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 this.balanceRemaining -= itemPrice;
-                // updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
             if (selectedType === "Bills") {
                 billsTable.append(newRow);
                 updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
+                this.billsExpenses += itemPrice;
+                bills.innerText = "Total Bills: "+"$"+ parseFloat(this.billsExpenses).toFixed(2); 
             } else if (selectedType === "Food") {
                 foodTable.append(newRow);
                 updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
+                this.foodExpenses += itemPrice;
+                food.innerText = "Total Food: "+"$"+ parseFloat(this.foodExpenses).toFixed(2);
             } else if (selectedType === "Entertainment") {
                 entertainmentTable.append(newRow);
                 updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
+                this.entertainmentExpenses += itemPrice;
+                entertainment.innerText = "Total Entertainment: "+"$"+ parseFloat(this.entertainmentExpenses).toFixed(2);
             } else if (selectedType === "Clothing") {
                 clothingTable.append(newRow);
                 updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
+                this.clothingExpenses += itemPrice;
+                clothing.innerText = "Total Clothing: "+"$"+ parseFloat(this.clothingExpenses).toFixed(2);
         } else if (selectedType === "empty") {
             newRow.remove();
             alert("error... You didn't select a category");
         } if (this.balanceRemaining <= 15) {
                 alert("You are reaching your budget limit for the week");
             } else if (this.balanceRemaining <= 0) {
-                alert("Sorry... you have no more money!");
+                alert("Warning: You have no more money!");
             }
     })
 }
