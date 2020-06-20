@@ -60,6 +60,7 @@ class BudgetBuddy {
                 newData2.innerText = "$" + itemPrice;
                 this.spentExpenses += itemPrice;
                 this.balanceRemaining -= itemPrice;
+                newRow.style.backgroundColor = "white";
             if (selectedType === "Bills") {
                 billsTable.append(newRow);
                 updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
