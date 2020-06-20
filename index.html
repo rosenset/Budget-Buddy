@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@800&family=Grand+Hotel&family=Teko&family=Lato:wght@500&display=swap" rel="stylesheet">
     <title>JS Lab</title>
 </head>
 
 <body>
+    <header class="budget-buddy"><h1 class="budget-title">Budget Buddy</h1></header>
     <section class='inputFormat'>
         <section id='firstHeader'>
             <section id='header-container'>
@@ -32,12 +34,12 @@
         </section>
 
 
-
-        <form id='budget'>
-            <input id='what-is-your-budget' placeholder="Input your budget" name='budget-input'>
-            <button id='submit-your-budget'>submit</button>
-        </form>
-
+        <div class="input-budget-section">
+            <form id='budget'>
+                <input id='what-is-your-budget' placeholder="Input your budget" name='budget-input'>
+                <button id='submit-your-budget'>submit</button>
+            </form>
+        </div>
 
 
 
@@ -53,7 +55,7 @@
             </div>
             <div class='paragraphInput'>
                 <select name="type" id='purchase-type-dropdown'>
-                    <option id="blank" value="empty">Please select a category</option>
+                    <option id="blank" value="empty">Select a category:</option>
                     <option id="bills-type" value="Bills">Bills</option>
                     <option id="food-type" value="Food">Food</option>
                     <option id="entertainment-type" value="Entertainment">Entertainment</option>
@@ -62,7 +64,7 @@
                 </select>
             </div>
             <div class='paragraphInput'>
-                <button id='addButton'>Submit</button>
+                <button id='addButton'>submit</button>
             </div>
         </form>
 
@@ -110,7 +112,7 @@
             </tr>
         </table>
 
-        <button id ='addButton'; onClick="window.location.reload();">Clear</button>
+        <button class="clear-btn" id ='addButton'; onClick="window.location.reload();">clear page</button>
 
     </section>
 

@@ -57,7 +57,7 @@ class BudgetBuddy {
                 newData.innerText = expenseDescription.value; 
                 newData1.innerText = expenseDate.value;
                 const itemPrice = Number.parseFloat(expensePrice.value);
-                newData2.innerText = itemPrice;
+                newData2.innerText = "$" + itemPrice;
                 this.spentExpenses += itemPrice;
                 this.balanceRemaining -= itemPrice;
             if (selectedType === "Bills") {
@@ -66,24 +66,28 @@ class BudgetBuddy {
                 updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
                 this.billsExpenses += itemPrice;
                 bills.innerText = "Total Bills: "+"$"+ parseFloat(this.billsExpenses).toFixed(2); 
+                bills.classList.add("font");
             } else if (selectedType === "Food") {
                 foodTable.append(newRow);
                 updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
                 this.foodExpenses += itemPrice;
                 food.innerText = "Total Food: "+"$"+ parseFloat(this.foodExpenses).toFixed(2);
+                food.classList.add("font");
             } else if (selectedType === "Entertainment") {
                 entertainmentTable.append(newRow);
                 updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
                 this.entertainmentExpenses += itemPrice;
                 entertainment.innerText = "Total Entertainment: "+"$"+ parseFloat(this.entertainmentExpenses).toFixed(2);
+                entertainment.classList.add("font");
             } else if (selectedType === "Clothing") {
                 clothingTable.append(newRow);
                 updateSpent.innerText = "$" + this.spentExpenses.toFixed(2);
                 updateBalance.innerText = "$" + this.balanceRemaining.toFixed(2);
                 this.clothingExpenses += itemPrice;
                 clothing.innerText = "Total Clothing: "+"$"+ parseFloat(this.clothingExpenses).toFixed(2);
+                clothing.classList.add("font");
         } else if (selectedType === "empty") {
             newRow.remove();
             alert("error... You didn't select a category");
