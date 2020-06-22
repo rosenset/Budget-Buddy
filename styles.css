@@ -306,6 +306,10 @@ h3 {
     display: none; 
 }
 
+.fas {
+    color: rgba(64,167,73,1);
+}
+
 @media (min-width: 1025px){
 
     body {
