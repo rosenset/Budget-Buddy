@@ -10,7 +10,7 @@ body {
     flex-wrap: wrap;
     background-color: white;
     background-image: white;
-    padding-bottom: 0%;
+    padding: 0%;
     margin: 0%;
 }
 
@@ -22,9 +22,10 @@ body {
 .budget-title {
     display: flex;
     justify-content: center;
+    align-items: center;
     font-family: 'Grand Hotel', cursive;
     color: white; 
-    font-size: 80px;
+    font-size: 50px;
 }
 
 .inputFormat, .tableFormat {
@@ -132,7 +133,7 @@ body {
 
 
 #submit-your-budget {
-    border-radius: 10px;
+    border-radius: 5px;
     margin-bottom: 10px;
     border: none; 
     height: 30px;
@@ -301,6 +302,10 @@ h3 {
     margin-bottom: 15px; 
 }
 
+#trash-icon {
+    display: none; 
+}
+
 @media (min-width: 1025px){
 
     body {
@@ -339,6 +344,9 @@ h3 {
         position: relative; top: -325px;
         margin-bottom: 0px;
         padding-bottom: 0px;
+    }
+    .budget-title {
+        font-size: 70px;
     }
 
 }

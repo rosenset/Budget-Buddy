@@ -11,7 +11,9 @@
 </head>
 
 <body>
-    <header class="budget-buddy"><h1 class="budget-title">Budget Buddy</h1></header>
+    <header class="budget-buddy">
+        <h1 class="budget-title">Budget Buddy</h1>
+    </header>
     <section class='inputFormat'>
         <section id='firstHeader'>
             <section id='header-container'>
@@ -36,6 +38,7 @@
 
         <div class="input-budget-section">
             <form id='budget'>
+                <i class="fas fa-dollar-sign"></i>
                 <input id='what-is-your-budget' placeholder="Input your budget" name='budget-input'>
                 <button id='submit-your-budget'>submit</button>
             </form>
@@ -111,16 +114,19 @@
                 <th class='price'>Price</th>
             </tr>
         </table>
+        <i id="trash-icon" class="far fa-trash-alt"></i>
 
         <button class="clear-btn" id ='addButton'; onClick="window.location.reload();">clear page</button>
 
     </section>
 
-<script src="kentrell.js"></script>
-
 <div class = "gif">
     <img src = "https://media.giphy.com/media/3o6gDWzmAzrpi5DQU8/giphy.gif" alt = "money" />
 </div>
+
+<script src="kentrell.js"></script>
+<script src="https://kit.fontawesome.com/ae67e696e4.js" crossorigin="anonymous"></script>
+
 
 </body>
 
