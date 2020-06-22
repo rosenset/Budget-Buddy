@@ -40,14 +40,14 @@ class BudgetBuddy {
                 this.userBudgetDisplay.innerText = "$" + this.budget;
                 updateBalance.innerText = "$" + this.balanceRemaining;
             } 
-        } 
-        )
+        })
     }
+
     submitExpense() {
         purchaseInfoForm.addEventListener("submit", (event) => {
             event.preventDefault();
             const selectedType = expenseType.value;
-            const newRow = document.createElement("tr");
+                const newRow = document.createElement("tr");
                 const newData = document.createElement("td");
                 const newData1 = document.createElement("td");
                 const newData2 = document.createElement("td");
@@ -91,19 +91,15 @@ class BudgetBuddy {
                 clothing.classList.add("font");
         } else if (selectedType === "empty") {
             newRow.remove();
-            alert("error... You didn't select a category");
-        } if (this.balanceRemaining <= 15) {
-                alert("You are reaching your budget limit for the week");
-            } else if (this.balanceRemaining <= 0) {
-                alert("Warning: You have no more money!");
+            alert("Error... You didn't select a category");
+        } if (this.balanceRemaining < 0) {
+                alert("Warning: Your balance is negative!");
             }
     })
 }
-
 }
 
-
-const newBudget = new BudgetBuddy()
+const newBudget = new BudgetBuddy();
 
 newBudget.submitBudgetInput();
 newBudget.submitExpense();
